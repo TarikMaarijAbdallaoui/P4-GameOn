@@ -104,14 +104,19 @@ img {
   }
 }
 
-
-
  @media screen and (max-width: 540px) {
   .topnav a {display: none;}
   .topnav a.icon {
     float: right;
     display: block;
     margin-top: -15px;
+  }
+  .content {
+    margin: 10% auto;
+  }
+  .hero-headline {
+    font-size: 150%;
+    white-space: normal;
   }
 } 
 
@@ -125,8 +130,6 @@ main {
   margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
-
-
 }
 
 .modal-btn {
@@ -509,8 +512,9 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 4.5rem;
-    white-space: normal;
+    font-size: 193%;
+    font-weight: bold;
+    margin: -5% 0% -2% -4%;
   }
   .hero-text {
     width: unset;
