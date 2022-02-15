@@ -5,19 +5,27 @@ function editNav() {
   } else {
     x.className = "topnav";
   }
-}
+};
 
 // DOM Elements
+
+// Les constantes
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
-const formData = document.querySelectorAll(".formData");
+const closeModal = document.querySelector(".close");
 
-// launch modal event
+// Les événements
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
+closeModal.addEventListener("click", exitModal);
 
-// launch modal form
+// Les fonctions
 function launchModal() {
   modalbg.style.display = "block";
 }
+
+function exitModal() {
+  modalbg.style.display = "none";
+  reserveModal.submit();
+};
 
 
