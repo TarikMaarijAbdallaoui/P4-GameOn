@@ -90,6 +90,18 @@ img {
     display: block;
     text-align: left;
   }
+  .content {
+    margin: 10% auto;
+  }
+  
+  img {
+    width: 65%;
+    margin: 1% 1% 1% 6%;
+  }
+  .hero-headline {
+    font-size: 150%;
+    white-space: normal;
+  }
 }
 
 
