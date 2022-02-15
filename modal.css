@@ -550,3 +550,9 @@ footer {
   }
 }
 
+.salutation {
+  padding: 230px 2%;
+  margin: 15px auto;
+  display: none;
+}
+
