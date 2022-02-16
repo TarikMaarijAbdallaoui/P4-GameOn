@@ -13,6 +13,7 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const closeModal = document.querySelector(".close");
+const prenom = document.getElementById("first");
 
 // Les événements
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -30,4 +31,7 @@ function exitModal() {
 };
 
 
-function validate() {}
+function validate() {
+  var errorVerif = false;
+  var regex1 = /^[A-Za-z]+$/;
+}
