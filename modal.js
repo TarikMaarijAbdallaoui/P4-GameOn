@@ -23,11 +23,13 @@ const tournoisVerif = document.getElementById("quantity");
 const conditionVerif = document.getElementById("checkbox1");
 const modalBodyModal = document.querySelector(".modal-body");
 const salutation = document.querySelector(".salutation");
+const submit2Modal = document.querySelector(".btn-submit2");
 
 // Les événements
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 closeModal.addEventListener("click", exitModal);
 submitModal.addEventListener("click", test); 
+submit2Modal.addEventListener("click", exitModal);
 
 // Les fonctions
 function launchModal() {
