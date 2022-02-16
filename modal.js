@@ -18,6 +18,7 @@ const submitModal = document.querySelector(".btn-submit");
 const nom = document.getElementById("last");
 const emailVerif = document.getElementById("email");
 const birthVerit = document.getElementById("birthdate");
+const tournoisVerif = document.getElementById("quantity");
 
 // Les événements
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -86,6 +87,17 @@ function validate() {
   } else {
     document.getElementById("birrth_error").innerHTML = '';
     birthVerit.style.border = '0px solid red';
+  }
+
+  if ((tournoisVerif.value == null) || (tournoisVerif.value == '')) {
+    document.getElementById("tournois_error").innerHTML = 'Vous devez choisir une option.';
+    tournoisVerif.focus();
+    tournoisVerif.style.border = '2px solid #fe142f';
+
+    errorVerif = true;
+  } else {
+    document.getElementById("tournois_error").innerHTML = '';
+    tournoisVerif.style.border = '0px solid red';
   }
 };
 
