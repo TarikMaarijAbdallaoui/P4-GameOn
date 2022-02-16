@@ -17,6 +17,7 @@ const prenom = document.getElementById("first");
 const submitModal = document.querySelector(".btn-submit");
 const nom = document.getElementById("last");
 const emailVerif = document.getElementById("email");
+const birthVerit = document.getElementById("birthdate");
 
 // Les événements
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -74,6 +75,17 @@ function validate() {
   } else {
     document.getElementById("email_error").innerHTML = '';
     emailVerif.style.border = '0px solid red';
+  }
+
+  if ((birthVerit.value == '')) {
+    document.getElementById("birrth_error").innerHTML = 'Veuillez entrer votre date de naissance.';
+    birthVerit.focus();
+    birthVerit.style.border = '2px solid #fe142f';
+
+    errorVerif = true;
+  } else {
+    document.getElementById("birrth_error").innerHTML = '';
+    birthVerit.style.border = '0px solid red';
   }
 };
 
