@@ -14,10 +14,12 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const closeModal = document.querySelector(".close");
 const prenom = document.getElementById("first");
+const submitModal = document.querySelector(".btn-submit");
 
 // Les événements
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 closeModal.addEventListener("click", exitModal);
+submitModal.addEventListener("click", test); 
 
 // Les fonctions
 function launchModal() {
@@ -46,4 +48,14 @@ function validate() {
     document.getElementById("prenom_error").innerHTML = '';
     prenom.style.border = '0px solid red';
   }
-}
+};
+
+function test(event) {
+  event.preventDefault();
+  if (!validate()) {
+    return false;
+  } else {
+    modalBodyModal.style.display = "none";
+    salutation.style.display = "block";
+  }
+};
