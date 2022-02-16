@@ -99,6 +99,14 @@ function validate() {
     document.getElementById("tournois_error").innerHTML = '';
     tournoisVerif.style.border = '0px solid red';
   }
+
+  if (!document.querySelector('input[name = "location"]:checked')) {
+    document.getElementById("city_error").innerHTML = 'Vous devez choisir une option.';
+
+    errorVerif = true;
+  } else {
+    document.getElementById("city_error").innerHTML = '';
+  }
 };
 
 function test(event) {
