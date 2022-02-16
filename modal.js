@@ -34,4 +34,16 @@ function exitModal() {
 function validate() {
   var errorVerif = false;
   var regex1 = /^[A-Za-z]+$/;
+
+  if ((prenom.value === '') || (prenom.value.length < 2)
+    || (!prenom.value.match(regex1))) {
+    document.getElementById("prenom_error").innerHTML = 'Veuillez entrer au moins 2 caractères valables.';
+    prenom.focus();
+    prenom.style.border = '2px solid #fe142f';
+
+    errorVerif = true;
+  } else {
+    document.getElementById("prenom_error").innerHTML = '';
+    prenom.style.border = '0px solid red';
+  }
 }
