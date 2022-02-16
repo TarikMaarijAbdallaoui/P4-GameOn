@@ -15,6 +15,7 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const closeModal = document.querySelector(".close");
 const prenom = document.getElementById("first");
 const submitModal = document.querySelector(".btn-submit");
+const nom = document.getElementById("last");
 
 // Les événements
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -47,6 +48,18 @@ function validate() {
   } else {
     document.getElementById("prenom_error").innerHTML = '';
     prenom.style.border = '0px solid red';
+  }
+
+  if ((nom.value === '') || (nom.value.length < 2)
+    || (!nom.value.match(regex1))) {
+    document.getElementById("nom_error").innerHTML = 'Veuillez entrer au moins 2 caractères valables.';
+    nom.focus();
+    nom.style.border = '2px solid #fe142f';
+
+    errorVerif = true;
+  } else {
+    document.getElementById("nom_error").innerHTML = '';
+    nom.style.border = '0px solid red';
   }
 };
 
