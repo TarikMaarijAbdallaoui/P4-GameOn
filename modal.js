@@ -16,6 +16,7 @@ const closeModal = document.querySelector(".close");
 const prenom = document.getElementById("first");
 const submitModal = document.querySelector(".btn-submit");
 const nom = document.getElementById("last");
+const emailVerif = document.getElementById("email");
 
 // Les événements
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -37,6 +38,7 @@ function exitModal() {
 function validate() {
   var errorVerif = false;
   var regex1 = /^[A-Za-z]+$/;
+  var regex2 = /^[^@\s]+@[^@\.\s]+(\.[^@\.\s]+)+$/;
 
   if ((prenom.value === '') || (prenom.value.length < 2)
     || (!prenom.value.match(regex1))) {
@@ -60,6 +62,18 @@ function validate() {
   } else {
     document.getElementById("nom_error").innerHTML = '';
     nom.style.border = '0px solid red';
+  }
+
+  if ((emailVerif.value == null) || (emailVerif.value == '')
+    || (!emailVerif.value.match(regex2))) {
+    document.getElementById("email_error").innerHTML = 'Veuillez entrer une adresse Email valable.';
+    emailVerif.focus();
+    emailVerif.style.border = '2px solid #fe142f';
+
+    errorVerif = true;
+  } else {
+    document.getElementById("email_error").innerHTML = '';
+    emailVerif.style.border = '0px solid red';
   }
 };
 
