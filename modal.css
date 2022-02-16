@@ -556,3 +556,8 @@ footer {
   display: none;
 }
 
+.error {
+  color: #fe142f;
+  font-size: 50%;
+}
+
