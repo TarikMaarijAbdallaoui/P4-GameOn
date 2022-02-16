@@ -15,11 +15,14 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const closeModal = document.querySelector(".close");
 const prenom = document.getElementById("first");
 const submitModal = document.querySelector(".btn-submit");
+const reserveModal = document.getElementById("reserve");
 const nom = document.getElementById("last");
 const emailVerif = document.getElementById("email");
 const birthVerit = document.getElementById("birthdate");
 const tournoisVerif = document.getElementById("quantity");
 const conditionVerif = document.getElementById("checkbox1");
+const modalBodyModal = document.querySelector(".modal-body");
+const salutation = document.querySelector(".salutation");
 
 // Les événements
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -108,6 +111,20 @@ function validate() {
   } else {
     document.getElementById("city_error").innerHTML = '';
   }
+
+  if (!conditionVerif.checked) {
+    document.getElementById("condition_error").innerHTML = 'Vous devez vérifier que vous acceptez les termes et conditions';
+
+    errorVerif = true;
+  } else {
+    document.getElementById("condition_error").innerHTML = '';
+  }
+
+  if (errorVerif === true) {
+    return false;
+  } else {
+    return true;
+  }
 };
 
 function test(event) {
@@ -117,13 +134,5 @@ function test(event) {
   } else {
     modalBodyModal.style.display = "none";
     salutation.style.display = "block";
-  }
-
-  if (!conditionVerif.checked) {
-    document.getElementById("condition_error").innerHTML = 'Vous devez vérifier que vous acceptez les termes et conditions';
-
-    errorVerif = true;
-  } else {
-    document.getElementById("condition_error").innerHTML = '';
   }
 };
