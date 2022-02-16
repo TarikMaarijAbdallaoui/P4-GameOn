@@ -21,7 +21,8 @@ closeModal.addEventListener("click", exitModal);
 // Les fonctions
 function launchModal() {
   modalbg.style.display = "block";
-}
+  reserveModal.reset();
+};
 
 function exitModal() {
   modalbg.style.display = "none";
