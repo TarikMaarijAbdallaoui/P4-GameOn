@@ -30,3 +30,4 @@ function exitModal() {
 };
 
 
+function validate() {}
