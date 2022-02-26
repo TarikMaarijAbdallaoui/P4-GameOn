@@ -25,6 +25,11 @@ const modalBodyModal = document.querySelector(".modal-body");
 const salutation = document.querySelector(".salutation");
 const submit2Modal = document.querySelector(".btn-submit2");
 
+      
+let date = new Date(birthVerit);
+let actualDate = Date.now();
+
+
 // Les événements
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 closeModal.addEventListener("click", exitModal);
@@ -45,8 +50,15 @@ function exitModal() {
 
 function validate() {
   var errorVerif = false;
-  var regex1 = /^[A-Za-z]+$/;
+  var regex1 = /^[A-Za-z\s]+$/;
   var regex2 = /^[^@\s]+@[^@\.\s]+(\.[^@\.\s]+)+$/;
+      
+  const date = new Date(birthVerit.value);
+  
+  const timeStampDate = Date.parse(date);
+  
+  const actualDate = Date.now();
+  
 
   if ((prenom.value === '') || (prenom.value.length < 2)
     || (!prenom.value.match(regex1))) {
@@ -84,12 +96,16 @@ function validate() {
     emailVerif.style.border = '0px solid red';
   }
 
-  if ((birthVerit.value == '')) {
+  if (birthVerit.value == '') {
     document.getElementById("birrth_error").innerHTML = 'Veuillez entrer votre date de naissance.';
     birthVerit.focus();
     birthVerit.style.border = '2px solid #fe142f';
 
     errorVerif = true;
+  } else if(timeStampDate > actualDate){
+    document.getElementById("birrth_error").innerHTML = 'Votre date de naissance ne peut pas être postérieure à la date actuelle.';
+    birthVerit.focus();
+    birthVerit.style.border = '2px solid #fe142f';
   } else {
     document.getElementById("birrth_error").innerHTML = '';
     birthVerit.style.border = '0px solid red';
